@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8FAFF;
+  --foreground: #0A0F1F;
+  --surface: #FFFFFF;
+  --surface-muted: #EEF2FF;
+  --accent: #4169E1;
+  --accent-muted: #5B7FE8;
+  --muted: #6B7DA0;
+  --border: #D4DEFF;
+  --green: #10B981;
+}
+
+.dark {
+  --background: #05070D;
+  --foreground: #EAF0FF;
+  --surface: #0A0F1F;
+  --surface-muted: #111833;
+  --accent: #4169E1;
+  --accent-muted: #7DA2FF;
+  --muted: #9BB0E0;
+  --border: #1B2A52;
+  --green: #3DFFC0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] antialiased;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+::selection {
+  background: rgba(65, 105, 225, 0.3);
+  color: var(--foreground);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-marquee {
+  --marquee-duration: 18s;
+  animation: logo-marquee var(--marquee-duration) linear infinite;
+  will-change: transform;
+}
