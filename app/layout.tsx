@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "Nick Thomas",
   },
   description:
-    "Personal portfolio and thoughts. Data Analyst/Scientist/Machine Learning Engineer.",
+    "Personal portfolio. Data Analyst/Scientist/Machine Learning Engineer.",
   openGraph: {
     type: "website",
   },

@@ -10,15 +10,6 @@ export interface Project {
   content?: string;
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  author?: string;
-  tags?: string[];
-}
-
 export interface ExperienceItem {
   title: string;
   company: string;
