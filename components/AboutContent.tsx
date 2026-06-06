@@ -61,7 +61,7 @@ export function AboutContent() {
         >
           <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-[var(--surface-muted)]">
             <Image
-              src={bio.profileImage ?? "/ProfilePic.jpg"}
+              src={bio.profileImage}
               alt=""
               fill
               className="object-cover object-[center_25%]"
@@ -161,9 +161,13 @@ export function AboutContent() {
           className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-all hover:border-[var(--accent)]/50 sm:p-8"
         >
           <div className="relative h-40 w-full overflow-hidden rounded-xl bg-[var(--surface-muted)]">
-            <div
-              className="h-full w-full bg-gradient-to-br from-[var(--accent)]/10 to-[var(--surface-muted)]"
-              aria-hidden="true"
+            <Image
+              src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80"
+              alt="Statistics"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={false}
             />
           </div>
           <h3 className="mt-4 font-serif text-lg text-[var(--foreground)]">
