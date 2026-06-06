@@ -21,6 +21,7 @@ yarn-error.log*
 
 # TypeScript
 next-env.d.ts
+tsconfig.tsbuildinfo
 
 # Local project folders (not part of the website)
 /March Madness/
