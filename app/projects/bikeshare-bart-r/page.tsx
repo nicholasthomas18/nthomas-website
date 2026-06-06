@@ -99,7 +99,7 @@ export default function BikeSharePage() {
 
         {/* THE PROBLEM */}
         <section className="bs-section">
-          <div className="bs-label">// 01 — The Problem</div>
+          <div className="bs-label">{"// 01 — The Problem"}</div>
           <h2 className="bs-section-title">
             Predicting when people rent bikes<br />
             <em>down to the hour.</em>
@@ -149,7 +149,7 @@ export default function BikeSharePage() {
 
         {/* PIPELINE */}
         <section className="bs-section bs-section-tinted">
-          <div className="bs-label">// 02 — The Pipeline</div>
+          <div className="bs-label">{"// 02 — The Pipeline"}</div>
           <h2 className="bs-section-title">
             The modeling pipeline <em>step by step</em>
           </h2>
@@ -169,7 +169,7 @@ export default function BikeSharePage() {
 
         {/* RESULT */}
         <section className="bs-section">
-          <div className="bs-label">// 03 — Result</div>
+          <div className="bs-label">{"// 03 — Result"}</div>
           <h2 className="bs-section-title">
             Final score: <em>0.39497 RMSLE</em>
           </h2>
@@ -254,7 +254,7 @@ export default function BikeSharePage() {
 
         {/* SKILLS */}
         <section className="bs-section bs-section-tinted">
-          <div className="bs-label">// 04 — Skills Demonstrated</div>
+          <div className="bs-label">{"// 04 — Skills Demonstrated"}</div>
           <h2 className="bs-section-title">
             What this project <em>covers</em>
           </h2>
@@ -273,7 +273,7 @@ export default function BikeSharePage() {
 
         {/* CTA */}
         <section className="bs-section">
-          <div className="bs-label">// 05 — Run It Yourself</div>
+          <div className="bs-label">{"// 05 — Run It Yourself"}</div>
           <h2 className="bs-section-title">
             See the code and <em>try it out</em>
           </h2>
