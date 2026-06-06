@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CountUp } from "@/components/CountUp";
 
 export const metadata = {
   title: "Resume",
@@ -13,7 +14,6 @@ const education = {
   date: "Apr 2026",
   emphasis: "Data Science Emphasis | Minor in Statistics | STEM-Designated Technical Program",
   school: "Brigham Young University - Marriott School of Business, Provo UT",
-  gpa: "3.64 GPA",
   bullets: [
     "Student Athlete on BYU Dunk Team – 300+ hours of community service through CougarBuilt Initiative",
     "Member of Association for Information Systems",
@@ -163,7 +163,7 @@ export default function ResumePage() {
                 {education.school}
               </p>
               <span className="font-mono text-xs italic text-[var(--muted)]">
-                {education.gpa}
+                <CountUp to={3.64} decimals={2} /> GPA
               </span>
             </div>
             <ul className="mt-3 space-y-1.5 pl-4 text-sm text-[var(--foreground)]/90">

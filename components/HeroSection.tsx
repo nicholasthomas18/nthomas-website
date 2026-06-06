@@ -36,7 +36,16 @@ export function HeroSection({ name, tagline, short }: HeroSectionProps) {
       >
         {firstPart}
         {firstPart && " "}
-        <span className="italic text-[var(--accent-muted)]">{lastName}</span>
+        <span className="relative inline-block italic text-[var(--accent-muted)]">
+          {lastName}
+          <motion.span
+            aria-hidden="true"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -bottom-1 left-0 right-0 h-[3px] origin-left rounded-full bg-[var(--green)]"
+          />
+        </span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 10 }}

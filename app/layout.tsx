@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree, DM_Serif_Display, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -52,7 +53,9 @@ export default function RootLayout({
         className={`${figtree.variable} ${dmSerif.variable} ${ibmPlexMono.variable} font-sans min-h-screen flex flex-col`}
       >
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>

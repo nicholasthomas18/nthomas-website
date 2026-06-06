@@ -45,11 +45,11 @@ export function Header() {
           {navItems.map(({ href, label }) => {
             const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
             return (
-              <li key={href}>
+              <li key={href} className="relative">
                 <Link
                   href={href}
                   className={cn(
-                    "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                    "relative inline-block rounded-md px-3 py-2 text-sm font-medium transition-colors",
                     isActive
                       ? "text-[var(--green)]"
                       : "text-[var(--muted)] hover:text-[var(--foreground)]"
@@ -57,6 +57,13 @@ export function Header() {
                   aria-current={isActive ? "page" : undefined}
                 >
                   {label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-[var(--green)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </Link>
               </li>
             );

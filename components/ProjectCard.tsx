@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { Project } from "@/types";
 import { formatDate } from "@/lib/utils";
 import { cn } from "@/lib/utils";
+import { EASE_OUT_EXPO } from "@/lib/motion";
 
 interface ProjectCardProps {
   project: Project;
@@ -25,9 +26,10 @@ export function ProjectCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+      transition={{ duration: 0.4, delay: index * 0.05, ease: EASE_OUT_EXPO }}
+      whileHover={{ y: -4 }}
       className={cn(
-        "group overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] transition-all hover:border-[var(--accent)]/50 hover:shadow-[0_0_20px_rgba(65,105,225,0.08)]",
+        "group overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] transition-[border-color,box-shadow] duration-300 hover:border-[var(--accent)]/50 hover:shadow-[0_8px_30px_rgba(65,105,225,0.12)]",
         variant === "compact" ? "p-4" : "p-0"
       )}
     >
