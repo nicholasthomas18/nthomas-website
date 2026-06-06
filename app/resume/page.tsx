@@ -5,78 +5,94 @@ export const metadata = {
   description: "Experience and education overview.",
 };
 
+const summary =
+  "Data Scientist with experience building machine learning pipelines, ETL infrastructure, and statistical modeling for business decisions. Owns projects end-to-end, from raw data to executive-ready insights, while working effectively across technical and non-technical teams.";
+
 const education = {
   degree: "Bachelor of Science Information Systems",
   date: "Apr 2026",
   emphasis: "Data Science Emphasis | Minor in Statistics | STEM-Designated Technical Program",
   school: "Brigham Young University - Marriott School of Business, Provo UT",
+  gpa: "3.64 GPA",
   bullets: [
-    "GPA 3.74",
-    "Member of Association for Information Systems",
-    "Specialized Courses: Predictive Analytics, Machine Learning Algorithms, Database Systems, Applied R Programming, Spreadsheets & Business Analysis, Data Science for Organizations, Business Strategy",
     "Student Athlete on BYU Dunk Team – 300+ hours of community service through CougarBuilt Initiative",
+    "Member of Association for Information Systems",
+    "Coursework: Machine Learning in Python, Predictive Analytics, Database Systems, Statistical Modeling, Applied R Programming, Strategy and Economics",
   ],
 };
 
 const technicalSkills = [
-  { category: "Data & BI", items: "Tableau, Power BI, PostgreSQL, EDA in Python, Dashboards, DataRobot" },
-  { category: "Programming", items: "Python, R, SQL, C#, HTML, CSS, JavaScript, VBA" },
-  { category: "Other Technology", items: "AWS (EC2, S3, RDS), Full Stack Programming using ASP.NET" },
-  { category: "Certifications", items: "Power BI" },
+  {
+    category: "Programming",
+    items: "Python, R, SQL, Git, Jupyter Notebooks, Pandas, NumPy, Scikit-learn, Matplotlib, Streamlit",
+  },
+  {
+    category: "Data & Analytics",
+    items: "Power BI, Tableau, PostgreSQL, Excel, DataRobot",
+  },
+  {
+    category: "Other Technology",
+    items: "AWS (EC2, S3, RDS), Docker, Supabase",
+  },
 ];
 
 const projectExperience = [
-  "Developed a Python package with API-based data collection, Streamlit app, and Quarto documentation (2025)",
-  "Built and tuned end to end machine learning models across multiple Kaggle competitions (2025)",
-  "Built a Machine Learning Pipeline (Python, C#, React) for data-driven recommendation app (2024)",
+  "Deployed an ML recommendation pipeline using collaborative and content-based filtering across 50+ products",
+  "Developed a Python package with API-based data collection, Streamlit app, and Quarto documentation",
+  "Tuned XGBoost, K-Means, and SVM models across multiple Kaggle competitions, ranking top 5% in each",
 ];
 
 const experience = [
   {
+    company: "United Way",
+    location: "Provo, UT",
+    title: "Data Analyst",
+    period: "Apr 2026 – Present",
+    points: [
+      "Engineered an ETL pipeline integrating 18+ data sources into a unified Power BI model, standardizing messy, inconsistent data across previously siloed systems",
+      "Built dashboards used by 20+ staff for budget decisions, program tracking, and funding presentations",
+      "Delivered a production-ready Power BI system in under a month, from stakeholder requirements to deployment",
+    ],
+  },
+  {
+    company: "Creeda",
+    location: "Provo, UT",
+    title: "Data Science Consultant (Contract)",
+    period: "Mar 2026 – Apr 2026",
+    points: [
+      "Built a classification model on QuickBooks API data, which categorized P&L transactions across 40+ categories at ~90% accuracy",
+      "Architected a replicable pipeline now live as the foundation of Creeda's product",
+      "Delivered a Data Science project lifecycle from EDA through model deployment in under a month",
+    ],
+  },
+  {
     company: "BYU Department of Information Systems",
     location: "Provo, UT",
-    title: "Teaching and Research Assistant",
-    period: "Sept 2025 – Present",
+    title: "Teaching and Research Assistant (Machine Learning)",
+    period: "Sep 2025 – Apr 2026",
     points: [
-      "Conduct research and statistical analysis on data privacy to support faculty publication",
-      "Teach undergraduate coursework in ML Pipelines in Python, Data Science Processes, ETL, and AI Prompting",
+      "Conducted comprehensive research and statistical analysis of privacy data in Python for faculty publication",
+      "Contributed to publication Privacy in Google Play Apps (AMCIS 2025 – Emergent Research Forum)",
+      "Taught coursework in Machine Learning Pipelines in Python, Data Science Processes, ETL, and AI Prompting",
     ],
   },
   {
     company: "Missionary Training Center",
     location: "Provo, UT",
     title: "Czech Language Instructor",
-    period: "Aug 2022 – Sept 2025",
+    period: "Aug 2022 – Sep 2025",
     points: [
-      "Taught 75+ students Czech and attained 92% in target proficiency benchmarks prior to in-country placement",
-      "Leveraged Excel and Python tools to track language proficiency metrics and streamline progress reporting",
-    ],
-  },
-  {
-    company: "MPWR",
-    location: "Riverside, CA",
-    title: "Sales Representative",
-    period: "Apr 2022 – Aug 2022",
-    points: [
-      "Generated over 60 leads through door-to-door prospecting, resulting in 16 solar contracts",
-      "Presented customized proposals, resolved concerns in real time, and closed deals through clear communication",
-    ],
-  },
-  {
-    company: "The Church of Jesus Christ of Latter-day Saints",
-    location: "Prague, Czech Republic",
-    title: "Volunteer Representative",
-    period: "Aug 2019 – Sep 2021",
-    points: [
-      "Led 12+ community service projects and provided 700+ hours of humanitarian service and ESL classes",
-      "Developed professional working fluency in Czech used daily in teaching, outreach, and service coordination",
+      "Taught 75+ students Czech and achieved a 92% target proficiency rate prior to in-country placement",
+      "Designed curriculum to teach the Czech language with cultural and historical context, adopted program wide",
     ],
   },
 ];
 
 const otherAchievements = [
-  "Eagle Scout, Boy Scouts of America",
-  "Represented and performed as Cosmo the Cougar, BYU's official mascot, at major athletic and public events",
+  "Cosmo the Cougar, BYU's Mascot – 4 years, 2 Fox Big Noon Kickoff appearances, 200+ community events",
+  "Eagle Scout – Boy Scouts of America",
+  "D2D Solar Sales Rep – 60+ leads, 16 closes",
+  "Volunteer Mission, Czech Republic – led 70+ missionaries, professional Czech fluency (2019-2021)",
 ];
 
 export default function ResumePage() {
@@ -121,10 +137,7 @@ export default function ResumePage() {
             </a>
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-[var(--muted)]">
-            Data Analytics specialist with a strong foundation in business analytics,
-            data science processes, and machine learning. Brings the technical skills of
-            Information Systems together with the mathematical background of Statistics to
-            turn data into deployable solutions.
+            {summary}
           </p>
         </div>
 
@@ -145,9 +158,14 @@ export default function ResumePage() {
             <p className="mt-0.5 text-sm italic text-[var(--accent-muted)]">
               {education.emphasis}
             </p>
-            <p className="mt-0.5 text-sm text-[var(--muted)]">
-              {education.school}
-            </p>
+            <div className="mt-0.5 flex flex-wrap items-baseline justify-between gap-2">
+              <p className="text-sm text-[var(--muted)]">
+                {education.school}
+              </p>
+              <span className="font-mono text-xs italic text-[var(--muted)]">
+                {education.gpa}
+              </span>
+            </div>
             <ul className="mt-3 space-y-1.5 pl-4 text-sm text-[var(--foreground)]/90">
               {education.bullets.map((b) => (
                 <li key={b} className="relative pl-4 before:absolute before:left-0 before:top-[0.55em] before:h-1 before:w-1 before:rounded-full before:bg-[var(--green)]">
@@ -196,19 +214,16 @@ export default function ResumePage() {
               <div key={`${job.company}-${job.title}`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <p className="font-semibold text-[var(--foreground)]">
-                    {job.company}
+                    {job.title}
                   </p>
-                  <span className="text-sm text-[var(--muted)]">
-                    {job.location}
+                  <span className="font-mono text-xs text-[var(--green)]">
+                    {job.period}
                   </span>
                 </div>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <p className="text-sm italic text-[var(--accent-muted)]">
-                    {job.title}
+                    {job.company}, {job.location}
                   </p>
-                  <span className="font-mono text-xs text-[var(--muted)]">
-                    {job.period}
-                  </span>
                 </div>
                 <ul className="mt-2 space-y-1.5 pl-4 text-sm text-[var(--foreground)]/90">
                   {job.points.map((pt) => (
