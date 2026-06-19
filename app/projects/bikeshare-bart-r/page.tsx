@@ -66,7 +66,7 @@ export default function BikeSharePage() {
   const skills = [
     ["📦", "Tidymodels Pipelines", "Built a fully reproducible preprocessing and modeling workflow using tidymodels recipes and workflows, the R equivalent of sklearn pipelines."],
     ["🔢", "Target Engineering", "Applied a log-transform to the skewed count target before modeling and correctly reversed it post-prediction, aligning training objective with the RMSLE evaluation metric."],
-    ["📅", "Datetime Feature Extraction", "Used lubridate to pull hour and weekday directly from raw datetime strings, which werethe two most predictive signals for hourly bike demand."],
+    ["📅", "Datetime Feature Extraction", "Used lubridate to pull hour and weekday directly from raw datetime strings, which were the two most predictive signals for hourly bike demand."],
     ["🌲", "BART Regression", "Implemented Bayesian Additive Regression Trees via the dbarts engine, a non-parametric ensemble method well-suited to structured tabular regression."],
     ["🔁", "Cross-Validated Tuning", "Tuned the tree count hyperparameter across a manually specified grid using vfold_cv and tune_grid, selecting the best configuration by RMSE."],
     ["📤", "Kaggle Submission Workflow", "Handled the full competition pipeline end-to-end: processing test data through the same recipe, generating predictions, and formatting for submission."],
@@ -252,9 +252,76 @@ export default function BikeSharePage() {
           </div>
         </section>
 
+        {/* ANALYSIS */}
+        <section className="bs-section">
+          <div className="bs-label">{"// 04 — Analysis"}</div>
+          <h2 className="bs-section-title">
+            What the data <em>tells us</em>
+          </h2>
+          <p className="bs-body">
+            Three views from the training data that shaped the modeling choices:
+            the daily rhythm of demand, how season and weather move it, and why
+            the count target gets log-transformed before fitting.
+          </p>
+
+          <div className="bs-analysis-grid">
+            <div className="bs-analysis-card bs-analysis-wide">
+              <div className="bs-analysis-head">
+                <h3>Demand by hour of day</h3>
+                <p>
+                  Working days show sharp commuter peaks at 8am and 5–6pm;
+                  weekends spread demand across midday. Hour was the single
+                  strongest predictor.
+                </p>
+              </div>
+              <div className="bs-analysis-frame">
+                <iframe
+                  title="Average rentals by hour of day"
+                  src="/bikeshare-charts/01_demand_by_hour.html"
+                  className="bs-analysis-iframe"
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+              </div>
+            </div>
+
+            <div className="bs-analysis-card">
+              <div className="bs-analysis-head">
+                <h3>Season &amp; weather</h3>
+                <p>Demand climbs in fall and summer and drops in poor weather.</p>
+              </div>
+              <div className="bs-analysis-frame">
+                <iframe
+                  title="Average rentals by season and weather"
+                  src="/bikeshare-charts/02_demand_by_season_weather.html"
+                  className="bs-analysis-iframe"
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+              </div>
+            </div>
+
+            <div className="bs-analysis-card">
+              <div className="bs-analysis-head">
+                <h3>Why log-transform</h3>
+                <p>Raw count is heavily right-skewed; the log makes it near-symmetric.</p>
+              </div>
+              <div className="bs-analysis-frame">
+                <iframe
+                  title="Target distribution: raw count vs log count"
+                  src="/bikeshare-charts/03_target_distribution.html"
+                  className="bs-analysis-iframe"
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SKILLS */}
         <section className="bs-section bs-section-tinted">
-          <div className="bs-label">{"// 04 — Skills Demonstrated"}</div>
+          <div className="bs-label">{"// 05 — Skills Demonstrated"}</div>
           <h2 className="bs-section-title">
             What this project <em>covers</em>
           </h2>
@@ -273,7 +340,7 @@ export default function BikeSharePage() {
 
         {/* CTA */}
         <section className="bs-section">
-          <div className="bs-label">{"// 05 — Run It Yourself"}</div>
+          <div className="bs-label">{"// 06 — Run It Yourself"}</div>
           <h2 className="bs-section-title">
             See the code and <em>try it out</em>
           </h2>
@@ -408,6 +475,16 @@ export default function BikeSharePage() {
         .bs-lb-track { height: 4px; background: var(--bs-border); border-radius: 2px; }
         .bs-lb-fill { height: 100%; background: var(--bs-muted); border-radius: 2px; transition: width 1s ease; }
         .bs-lb-fill-best { background: var(--bs-accent); }
+
+        .bs-analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 3rem; }
+        .bs-analysis-wide { grid-column: 1 / -1; }
+        @media (max-width: 700px) { .bs-analysis-grid { grid-template-columns: 1fr; } .bs-analysis-wide { grid-column: auto; } }
+        .bs-analysis-card { border: 1px solid var(--bs-border); background: var(--bs-surface); border-radius: 4px; overflow: hidden; }
+        .bs-analysis-head { padding: 1rem 1.25rem; border-bottom: 1px solid var(--bs-border); }
+        .bs-analysis-head h3 { font-family: var(--bs-serif); font-size: 1.1rem; color: var(--bs-ink); margin: 0; font-weight: 400; }
+        .bs-analysis-head p { margin-top: 0.35rem; color: var(--bs-muted); font-size: 0.85rem; line-height: 1.6; }
+        .bs-analysis-frame { position: relative; height: 300px; background: var(--bs-bg); }
+        .bs-analysis-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: var(--bs-bg); }
 
         .bs-skills { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; border: 1px solid var(--bs-border); }
         @media (max-width: 700px) { .bs-skills { grid-template-columns: 1fr; } }

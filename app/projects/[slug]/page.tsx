@@ -8,8 +8,15 @@ interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Slugs that have their own dedicated page under app/projects/<slug>/.
+// They must be excluded here so this dynamic route doesn't emit a competing
+// static page for the same path (which would shadow the rich custom page).
+const CUSTOM_ROUTE_SLUGS = ["bikeshare-bart-r", "march-madness-ml"];
+
 export async function generateStaticParams() {
-  return getAllProjectSlugs().map((slug) => ({ slug }));
+  return getAllProjectSlugs()
+    .filter((slug) => !CUSTOM_ROUTE_SLUGS.includes(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps) {
@@ -24,6 +31,8 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
+  // Slugs with a dedicated page are served by their own route, not this one.
+  if (CUSTOM_ROUTE_SLUGS.includes(slug)) notFound();
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
