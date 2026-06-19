@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { CountUp } from "@/components/CountUp";
-
 export const metadata = {
   title: "Resume",
   description: "Experience and education overview.",

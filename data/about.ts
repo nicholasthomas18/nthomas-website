@@ -4,16 +4,16 @@ export const bio = {
   name: "Nick Thomas",
   tagline: "I do all things data",
   short:
-    "Information Systems & Statistics student at BYU experienced in all things data from business analytics to data science processes to machine learning.",
-  long: `I'm an IS & Statistics student at Brigham Young University. I'm especially interested in data analytics, data science, and machine learning.
+    "Information Systems & Statistics graduate from BYU experienced in all things data from business analytics to data science processes to machine learning.",
+  long: `I'm a recent graduate of the Information Systems and Statistics programs at Brigham Young University, with a particular interest in predictive analytics, data science, and machine learning.
 
-I study Information Systems and Statistics, a combination that lets me work with data from end to end. Rather than being strong on just the technical side or just the analytical side, I can handle the full process: collecting and storing data, building models, and getting them into production.
+Studying these two fields together taught me to work with data from end to end. Rather than being strong on just the technical side or just the analytical side, I can handle the full process: collecting and storing data, building models, and getting them into production.
 
-I enjoy working on real world problems. I've helped design websites for startups, dug into strategy for an early-stage business, built machine learning features into a real application, and contributed to research for the state of Utah. I'm always looking for the next problem worth solving.`,
+What I enjoy most is applying that to real-world problems. I've designed forecasting models for businesses, built machine learning features into a live application, dug into strategy for an early-stage startup, developed websites, and contributed to research for the state of Utah. I'm always looking for the next problem worth solving.`,
   profileImage: "/images/photos/profile.jpg",
   badges: [
-    { label: "3.76 GPA" },
-    { label: "Apr 2026 Graduation" },
+    { label: "3.64 GPA" },
+    { label: "BYU Graduate" },
     { label: "Student Athlete" },
   ],
   hobbies: [
