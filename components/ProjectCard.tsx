@@ -20,6 +20,9 @@ export function ProjectCard({
   variant = "default",
 }: ProjectCardProps) {
   const href = `/projects/${project.slug}`;
+  // The 211 image is a transparent-background logo; give it a beige backdrop
+  // and contain (don't crop) it so it reads cleanly in the card.
+  const isLogo = project.slug === "211-call-volume-forecasting";
 
   return (
     <motion.article
@@ -35,13 +38,21 @@ export function ProjectCard({
     >
       <Link href={href} className="block">
         {variant === "default" && (
-          <div className="relative aspect-video w-full overflow-hidden bg-[var(--surface-muted)]">
+          <div
+            className={cn(
+              "relative aspect-video w-full overflow-hidden",
+              isLogo ? "bg-[#f5f0e1]" : "bg-[var(--surface-muted)]"
+            )}
+          >
             {project.image ? (
               <Image
                 src={project.image}
                 alt=""
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className={cn(
+                  "transition-transform duration-300 group-hover:scale-105",
+                  isLogo ? "object-contain p-6" : "object-cover"
+                )}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             ) : (
