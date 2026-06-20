@@ -2,6 +2,16 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    slug: "211-call-volume-forecasting",
+    title: "211 Call Volume Forecasting",
+    description:
+      "Forecasting daily and hourly call demand for United Way's 211 helpline with Facebook Prophet — seven years of call data, calendar-driven regressors, and a live staffing dashboard.",
+    date: "2026-06-18",
+    tags: ["Python", "Prophet", "Time Series", "Forecasting"],
+    featured: true,
+    image: "/images/projects/call211.png",
+  },
+  {
     slug: "bikeshare-bart-r",
     title: "Bikeshare: Bayesian Additive Regression Trees in R",
     description:

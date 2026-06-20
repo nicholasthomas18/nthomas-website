@@ -27,3 +27,7 @@ tsconfig.tsbuildinfo
 /March Madness/
 /RPS/
 /BikeShare/
+/211-Call-Volume-Forecasting-main/
+
+# Real United Way / 211 call records — never commit raw data
+211FactCalls.csv

@@ -11,7 +11,11 @@ interface ProjectPageProps {
 // Slugs that have their own dedicated page under app/projects/<slug>/.
 // They must be excluded here so this dynamic route doesn't emit a competing
 // static page for the same path (which would shadow the rich custom page).
-const CUSTOM_ROUTE_SLUGS = ["bikeshare-bart-r", "march-madness-ml"];
+const CUSTOM_ROUTE_SLUGS = [
+  "bikeshare-bart-r",
+  "march-madness-ml",
+  "211-call-volume-forecasting",
+];
 
 export async function generateStaticParams() {
   return getAllProjectSlugs()
