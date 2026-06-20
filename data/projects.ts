@@ -22,16 +22,6 @@ export const projects: Project[] = [
     image: "/images/projects/bikeshare.jpg",
   },
   {
-    slug: "predictive-customer-intelligence",
-    title: "Predictive Customer Intelligence Pipeline",
-    description:
-      "End-to-end pipeline for predictive customer intelligence: data ingestion, feature engineering, modeling, and actionable insights.",
-    date: "2024-04-22",
-    tags: ["ML", "Data Pipeline", "Python"],
-    featured: true,
-    image: "/images/projects/crispdm.png",
-  },
-  {
     slug: "march-madness-ml",
     title: "March Madness Machine Learning",
     description:
@@ -40,6 +30,16 @@ export const projects: Project[] = [
     tags: ["ML/AI", "Sports Analytics", "Python"],
     featured: true,
     image: "/march-madness-assets/MarchMadnessLogo.jpg",
+  },
+  {
+    slug: "predictive-customer-intelligence",
+    title: "Predictive Customer Intelligence Pipeline",
+    description:
+      "End-to-end pipeline for predictive customer intelligence: data ingestion, feature engineering, modeling, and actionable insights.",
+    date: "2024-04-22",
+    tags: ["ML", "Data Pipeline", "Python"],
+    featured: true,
+    image: "/images/projects/crispdm.png",
   },
 ];
 
